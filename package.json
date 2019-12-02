@@ -1,0 +1,24 @@
+{
+  "name": "frontend-project-lvl1",
+  "version": "1.0.0",
+  "description": "hexlet, javascript",
+  "main": "./src/bin/brain-games.js",
+  "scripts": {
+    "test": "no"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/informer735/frontend-project-lvl1.git"
+  },
+  "keywords": [
+    "hexlet",
+    "javascript",
+    "project"
+  ],
+  "author": "Smirnov Evgeny",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/informer735/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/informer735/frontend-project-lvl1#readme"
+}
