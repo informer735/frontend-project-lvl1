@@ -34,5 +34,8 @@
   ],
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
   }
 }
