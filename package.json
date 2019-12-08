@@ -2,7 +2,7 @@
   "name": "frontend-project-lvl1",
   "version": "1.0.0",
   "description": "hexlet, javascript",
-  "main": "./src/bin/brain-games.js",
+  "main": "./src/bin/brain-even.js",
   "scripts": {
     "test": "no",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
@@ -34,7 +34,8 @@
     "dist"
   ],
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "dependencies": {
     "eslint": "^6.7.2",
