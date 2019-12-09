@@ -1,8 +1,11 @@
 import readlinesync from 'readline-sync';
 
-const userName = readlinesync.question(' May I have your name? ');
+let userName = '';
 
 export const greeting = () => {
+  console.log('Welcome to the Brain Games!');
+  console.log('Answer "yes" if the number is even, otherwise answer "no".\n');
+  userName = readlinesync.question(' May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log();
 };

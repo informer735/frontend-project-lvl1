@@ -2,3 +2,7 @@
 [![Build Status](https://travis-ci.org/informer735/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/informer735/frontend-project-lvl1)
 
 # Проект Игры разума
+
+## Brain-even (угадай чётные числа)
+
+[![asciicast](https://asciinema.org/a/YASzMWUDnAlz6jmL6l1eZ6Ky5.svg)](https://asciinema.org/a/YASzMWUDnAlz6jmL6l1eZ6Ky5)
