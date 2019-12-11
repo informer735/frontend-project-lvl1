@@ -4,5 +4,7 @@
 # Проект Игры разума
 
 ## Brain-even (угадай чётные числа)
-
 [![asciicast](https://asciinema.org/a/YASzMWUDnAlz6jmL6l1eZ6Ky5.svg)](https://asciinema.org/a/YASzMWUDnAlz6jmL6l1eZ6Ky5)
+
+## Brain-calc (калькулятор)
+[![asciicast](https://asciinema.org/a/vTUKaJ5XYQvO2ulyX4z16GV6W.svg)](https://asciinema.org/a/vTUKaJ5XYQvO2ulyX4z16GV6W)
