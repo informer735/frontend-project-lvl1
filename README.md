@@ -1,4 +1,4 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/informer735/frontend-project-lvl1)
+[![Maintainability](https://api.codeclimate.com/v1/badges/d9b6152419c3994848ae1b6781562627258f7933/maintainability)](https://codeclimate.com/github/informer735/frontend-project-lvl1)
 [![Build Status](https://travis-ci.org/informer735/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/informer735/frontend-project-lvl1)
 
 # Проект Игры разума
