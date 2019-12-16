@@ -4,6 +4,7 @@ import * as calc from './games/calc';
 import * as even from './games/even';
 import * as gcd from './games/gcd';
 import * as progress from './games/progression';
+import * as prime from './games/prime';
 
 let userName = '';
 
@@ -12,13 +13,19 @@ const printStartMessage = (gameName) => {
 
   switch (gameName) {
     case 'Brain-even':
-      message = 'Answer "yes" if the number is even, otherwise answer "no".\n';
+      message += 'Answer "yes" if the number is even, otherwise answer "no".\n';
       break;
     case 'Brain-calc':
-      message = 'What is the result of the expression?\n';
+      message += 'What is the result of the expression?\n';
       break;
     case 'Brain-gcd':
-      message = 'Find the greatest common divisor of given numbers.\n';
+      message += 'Find the greatest common divisor of given numbers.\n';
+      break;
+    case 'brain-progression':
+      message += 'What number is missing in the progression?\n';
+      break;
+    case 'brain-prime':
+      message += 'Answer "yes" if given number is prime. Otherwise answer "no".\n';
       break;
     default:
       break;
@@ -80,6 +87,11 @@ export const gameEngine = (gameName) => {
         const resPro = getRandArr();
         res = progress.rigthAnswer(resPro, numPro);
         question = progress.question(resPro, numPro);
+        break;
+      case 'brain-prime':
+        const numPrime = getRandomInt(100);
+        res = prime.rigthAnswer(numPrime);
+        question = prime.question(numPrime);
         break;
       default:
         break;

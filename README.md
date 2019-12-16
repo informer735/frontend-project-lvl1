@@ -11,3 +11,9 @@
 
 ## Brain-gcd (поиск наибольшего делителя)
 [![asciicast](https://asciinema.org/a/Ybo9q97rwctQHnFYE5QIrDlLp.svg)](https://asciinema.org/a/Ybo9q97rwctQHnFYE5QIrDlLp)
+
+## Brain-progression (арифметическая прогрессия)
+[![asciicast](https://asciinema.org/a/jMOGRd3D6j14iQklCjKe4BE5U.svg)](https://asciinema.org/a/jMOGRd3D6j14iQklCjKe4BE5U)
+
+## Brain-prime (найди простое число)
+[![asciicast](https://asciinema.org/a/qRCx1zMP8CQ9hZLHrv5Vfx01W.svg)](https://asciinema.org/a/qRCx1zMP8CQ9hZLHrv5Vfx01W)

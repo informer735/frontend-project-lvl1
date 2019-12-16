@@ -2,7 +2,7 @@
   "name": "frontend-project-lvl1",
   "version": "1.0.0",
   "description": "hexlet, javascript",
-  "main": "./src/bin/brain-even.js",
+  "main": "./src/bin/brain-prime.js",
   "scripts": {
     "test": "no",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
@@ -38,7 +38,8 @@
     "brain-even": "dist/bin/brain-even.js",
     "brain-calc": "dist/bin/brain-calc.js",
     "brain-gcd": "dist/bin/brain-gcd.js",
-    "brain-progression": "dist/bin/brain-progression.js"
+    "brain-progression": "dist/bin/brain-progression.js",
+    "brain-prime": "dist/bin/brain-prime.js"
   },
   "dependencies": {
     "eslint": "^6.7.2",
