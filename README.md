@@ -8,3 +8,6 @@
 
 ## Brain-calc (калькулятор)
 [![asciicast](https://asciinema.org/a/vTUKaJ5XYQvO2ulyX4z16GV6W.svg)](https://asciinema.org/a/vTUKaJ5XYQvO2ulyX4z16GV6W)
+
+## Brain-gcd (поиск наибольшего делителя)
+[![asciicast](https://asciinema.org/a/Ybo9q97rwctQHnFYE5QIrDlLp.svg)](https://asciinema.org/a/Ybo9q97rwctQHnFYE5QIrDlLp)

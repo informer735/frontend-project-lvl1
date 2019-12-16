@@ -2,6 +2,7 @@
 import readlinesync from 'readline-sync';
 import * as calc from './games/calc';
 import * as even from './games/even';
+import * as gcd from './games/gcd';
 
 let userName = '';
 
@@ -14,6 +15,9 @@ const printStartMessage = (gameName) => {
       break;
     case 'Brain-calc':
       message = 'What is the result of the expression?\n';
+      break;
+    case 'Brain-gcd':
+      message = 'Find the greatest common divisor of given numbers.\n';
       break;
     default:
       break;
@@ -50,6 +54,12 @@ export const gameEngine = (gameName) => {
         const num = getRandomInt();
         res = even.rigthAnswer(num);
         question = even.question(num);
+        break;
+      case 'Brain-gcd':
+        const num3 = getRandomInt();
+        const num4 = getRandomInt();
+        res = gcd.rigthAnswer(num3, num4);
+        question = gcd.question(num3, num4);
         break;
       default:
         break;
