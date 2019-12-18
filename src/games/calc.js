@@ -1,17 +1,17 @@
 
 export const randomOperator = () => {
-  const num = Math.random();
-  if (num < 0.33) return '+';
-  if (num < 0.66) return '-';
+  const randNum = Math.random();
+  if (randNum < 0.33) return '+';
+  if (randNum < 0.66) return '-';
   return '*';
 };
 
-export const question = (num1, num2, oper) => `${num1} ${oper} ${num2}`;
+export const question = (a, b, oper) => `${a} ${oper} ${b}`;
 
-export const rigthAnswer = (num1, num2, oper) => {
-  let res = '';
-  if (oper === '+') res = num1 + num2;
-  if (oper === '-') res = num1 - num2;
-  if (oper === '*') res = num1 * num2;
-  return String(res);
+export const rigthAnswer = (a, b, oper) => {
+  let resault = '';
+  if (oper === '+') resault = a + b;
+  if (oper === '-') resault = a - b;
+  if (oper === '*') resault = a * b;
+  return String(resault);
 };

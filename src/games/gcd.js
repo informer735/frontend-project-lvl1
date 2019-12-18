@@ -1,4 +1,4 @@
-export const question = (num1, num2) => `${num1} ${num2}`;
+export const question = (a, b) => `${a} ${b}`;
 
 export const rigthAnswer = (num1, num2) => {
   let a = num1;
