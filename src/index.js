@@ -48,24 +48,21 @@ export const gameEngine = (gameName) => {
   while (count < tryCount) {
     let rigthAnswer = '';
     let questionString = '';
+    const firstRandomNumber = getRandomInt(100);
+    const secondRandomNumber = getRandomInt(100);
     switch (gameName) {
       case 'Brain-calc':
-        const num1 = getRandomInt(100);
-        const num2 = getRandomInt(100);
         const operator = calc.randomOperator();
-        rigthAnswer = calc.rigthAnswer(num1, num2, operator);
-        questionString = calc.question(num1, num2, operator);
+        rigthAnswer = calc.rigthAnswer(firstRandomNumber, secondRandomNumber, operator);
+        questionString = calc.question(firstRandomNumber, secondRandomNumber, operator);
         break;
       case 'Brain-even':
-        const num = getRandomInt(100);
-        rigthAnswer = even.rigthAnswer(num);
-        questionString = even.question(num);
+        rigthAnswer = even.rigthAnswer(firstRandomNumber);
+        questionString = even.question(firstRandomNumber);
         break;
       case 'Brain-gcd':
-        const num3 = getRandomInt(100);
-        const num4 = getRandomInt(100);
-        rigthAnswer = gcd.rigthAnswer(num3, num4);
-        questionString = gcd.question(num3, num4);
+        rigthAnswer = gcd.rigthAnswer(firstRandomNumber, secondRandomNumber);
+        questionString = gcd.question(firstRandomNumber, secondRandomNumber);
         break;
       case 'brain-progression':
         const numPro = getRandomInt(10);
@@ -74,9 +71,8 @@ export const gameEngine = (gameName) => {
         questionString = progress.question(resPro, numPro);
         break;
       case 'brain-prime':
-        const numPrime = getRandomInt(100);
-        rigthAnswer = prime.rigthAnswer(numPrime);
-        questionString = prime.question(numPrime);
+        rigthAnswer = prime.rigthAnswer(firstRandomNumber);
+        questionString = prime.question(firstRandomNumber);
         break;
       default:
         break;
