@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import { greeting, gameEngine } from '..';
+import startGame from '../games/even';
 
-greeting('Brain-even');
-gameEngine('Brain-even');
+startGame();

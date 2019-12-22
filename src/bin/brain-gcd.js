@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import { greeting, gameEngine } from '..';
+import startGame from '../games/gcd';
 
-greeting('Brain-gcd');
-gameEngine('Brain-gcd');
+startGame();

@@ -15,4 +15,11 @@ function getRandomList() {
   return randomList;
 }
 
-export { getRandomInt, getRandomList };
+const randomOperator = () => {
+  const randNum = Math.random();
+  if (randNum < 0.33) return '+';
+  if (randNum < 0.66) return '-';
+  return '*';
+};
+
+export { getRandomInt, getRandomList, randomOperator };
