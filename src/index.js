@@ -1,39 +1,35 @@
-/* eslint-disable no-case-declarations */
 import readlinesync from 'readline-sync';
 
 let userName = '';
+export const numberOfRound = 3;
 
-export const printStartMessage = (descript) => {
+export const printStartMessage = (description) => {
   const message = 'Welcome to the Brain Games!\n';
-  console.log(message + descript);
+  console.log(message + description);
 };
 
-export const greeting = (descript) => {
-  printStartMessage(descript);
+export const greeting = (description) => {
+  printStartMessage(description);
   userName = readlinesync.question(' May I have your name? ');
   console.log(`Hello, ${userName}!\n`);
 };
 
-export const attempt = (rigthAnswer, question) => {
-  console.log(`Question: ${question}`);
-  const answer = readlinesync.question('Your answer: ');
-  if (rigthAnswer === answer) {
-    console.log('Correct!');
-  } else {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rigthAnswer}'. Let's try again, ${userName}!`);
-    return false;
-  }
-  return true;
-};
 
-export const gameIngine = (func, numOfRound) => {
-  const isRigth = func();
+export const gameIngine = (data, descript) => {
+  let isWin = true;
 
-  if (isRigth) {
-    if (numOfRound !== 0) {
-      gameIngine(func, numOfRound - 1);
+  greeting(descript);
+  // eslint-disable-next-line no-restricted-syntax
+  for (const [rigthAnswer, question] of data) {
+    console.log(`Question: ${question}`);
+    const answer = readlinesync.question('Your answer: ');
+    if (rigthAnswer === answer) {
+      console.log('Correct!');
     } else {
-      console.log(`Congratulations, ${userName}!`);
+      isWin = false;
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rigthAnswer}'. Let's try again, ${userName}!`);
+      break;
     }
   }
+  if (isWin) console.log(`Congratulations, ${userName}!`);
 };

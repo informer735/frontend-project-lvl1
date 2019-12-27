@@ -1,21 +1,30 @@
-import { attempt, gameIngine, greeting } from '..';
-import { getRandomInt } from '../math';
+import {
+  gameIngine,
+  numberOfRound,
+} from '..';
+import getRandomInt from '../math';
 
-const discript = 'Answer "yes" if the number is even, otherwise answer "no".\n';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".\n';
 
-const rigthAnswer = (num) => ((num % 2 === 0) ? 'yes' : 'no');
+const isEven = (number) => number % 2 === 0;
+const rigthAnswer = (number) => (isEven(number) ? 'yes' : 'no');
+const questionForUser = (num) => String(num);
 
-const question = (num) => String(num);
 
-const isRigth = () => {
-  const a = getRandomInt(100);
-  const rigth = rigthAnswer(a);
-  const quest = question(a);
+function dataFromGame(rounds) {
+  const data = [];
+  for (let i = 0; i < rounds; i += 1) {
+    const number = getRandomInt(100);
 
-  return attempt(rigth, quest);
-};
+    data.push([
+      rigthAnswer(number),
+      questionForUser(number),
+    ]);
+  }
+  return data;
+}
+const data = dataFromGame(numberOfRound);
 
 export default () => {
-  greeting(discript);
-  gameIngine(isRigth, 2);
+  gameIngine(data, description);
 };

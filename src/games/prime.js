@@ -1,7 +1,10 @@
-import { attempt, gameIngine, greeting } from '..';
-import { getRandomInt } from '../math';
+import {
+  gameIngine,
+  numberOfRound,
+} from '..';
+import getRandomInt from '../math';
 
-const discript = 'Answer "yes" if given number is prime. Otherwise answer "no".\n';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".\n';
 
 const rigthAnswer = (num) => {
   if (num > 3) {
@@ -14,17 +17,22 @@ const rigthAnswer = (num) => {
   return 'yes';
 };
 
-const question = (num) => String(num);
+const questionForUser = (num) => String(num);
 
-const isRigth = () => {
-  const a = getRandomInt(100);
-  const rigth = rigthAnswer(a);
-  const quest = question(a);
+function dataFromGame(rounds) {
+  const data = [];
+  for (let i = 0; i < rounds; i += 1) {
+    const number = getRandomInt(100);
 
-  return attempt(rigth, quest);
-};
+    data.push([
+      rigthAnswer(number),
+      questionForUser(number),
+    ]);
+  }
+  return data;
+}
+const data = dataFromGame(numberOfRound);
 
 export default () => {
-  greeting(discript);
-  gameIngine(isRigth, 2);
+  gameIngine(data, description);
 };
