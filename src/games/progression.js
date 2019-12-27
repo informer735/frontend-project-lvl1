@@ -19,12 +19,12 @@ function getRandomList() {
   return randomList;
 }
 
-export const questionForUser = (arr, num) => {
+const questionForUser = (arr, num) => {
   arr.splice(num, 1, '..');
   return arr.join(' ');
 };
 
-export const rigthAnswer = (Arr, num) => String(Arr[num]);
+const rigthAnswer = (Arr, num) => String(Arr[num]);
 
 function dataFromGame(rounds) {
   const data = [];

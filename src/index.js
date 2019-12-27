@@ -3,12 +3,12 @@ import readlinesync from 'readline-sync';
 let userName = '';
 export const numberOfRound = 3;
 
-export const printStartMessage = (description) => {
+const printStartMessage = (description) => {
   const message = 'Welcome to the Brain Games!\n';
   console.log(message + description);
 };
 
-export const greeting = (description) => {
+const greeting = (description) => {
   printStartMessage(description);
   userName = readlinesync.question(' May I have your name? ');
   console.log(`Hello, ${userName}!\n`);
