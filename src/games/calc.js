@@ -1,10 +1,10 @@
 import {
-  gameIngine,
+  main,
   numberOfRound,
 } from '..';
 import getRandomInt from '../math';
 
-const description = 'What is the result of the expression?\n';
+const description = 'What is the result of the expression?';
 
 const randomOperator = () => {
   const randNum = Math.random();
@@ -13,9 +13,7 @@ const randomOperator = () => {
   return '*';
 };
 
-const questionForUser = (operand1, operand2, operation) => `${operand1} ${operation} ${operand2}`;
-
-const rigthAnswer = (operand1, operand2, operation) => {
+const calculation = (operand1, operand2, operation) => {
   let result = '';
   switch (operation) {
     case '+':
@@ -28,27 +26,30 @@ const rigthAnswer = (operand1, operand2, operation) => {
       result = operand1 * operand2;
       break;
     default:
-      console.log('error');
+      return false;
   }
-  return String(result);
+  return result;
 };
 
-function dataFromGame(rounds) {
+function getDataFromGame(numberOfRounds) {
   const data = [];
-  for (let i = 0; i < rounds; i += 1) {
-    const operand1 = getRandomInt(100);
-    const operand2 = getRandomInt(100);
+  for (let i = 0; i < numberOfRounds; i += 1) {
+    const operand1 = getRandomInt(1, 100);
+    const operand2 = getRandomInt(1, 100);
     const operation = randomOperator();
 
+    const rigthAnswer = String(calculation(operand1, operand2, operation));
+    const questionForUser = `${operand1} ${operation} ${operand2}`;
+
     data.push([
-      rigthAnswer(operand1, operand2, operation),
-      questionForUser(operand1, operand2, operation),
+      rigthAnswer,
+      questionForUser,
     ]);
   }
   return data;
 }
-const data = dataFromGame(numberOfRound);
+const dataFromGame = getDataFromGame(numberOfRound);
 
 export default () => {
-  gameIngine(data, description);
+  main(dataFromGame, description);
 };

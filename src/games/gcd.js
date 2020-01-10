@@ -1,10 +1,10 @@
 import {
-  gameIngine,
+  main,
   numberOfRound,
 } from '..';
 import getRandomInt from '../math';
 
-const description = 'Find the greatest common divisor of given numbers.\n';
+const description = 'Find the greatest common divisor of given numbers.';
 
 const findGcd = (num1, num2) => {
   let a = num1;
@@ -21,11 +21,11 @@ const findGcd = (num1, num2) => {
 const questionForUser = (num1, num2) => `${num1} ${num2}`;
 const rigthAnswer = (num1, num2) => String(findGcd(num1, num2));
 
-function dataFromGame(rounds) {
+function getDataFromGame(numberOfRounds) {
   const data = [];
-  for (let i = 0; i < rounds; i += 1) {
-    const number1 = getRandomInt(100);
-    const number2 = getRandomInt(100);
+  for (let i = 0; i < numberOfRounds; i += 1) {
+    const number1 = getRandomInt(1, 100);
+    const number2 = getRandomInt(1, 100);
 
     data.push([
       rigthAnswer(number1, number2),
@@ -34,8 +34,8 @@ function dataFromGame(rounds) {
   }
   return data;
 }
-const data = dataFromGame(numberOfRound);
+const dataFromGame = getDataFromGame(numberOfRound);
 
 export default () => {
-  gameIngine(data, description);
+  main(dataFromGame, description);
 };

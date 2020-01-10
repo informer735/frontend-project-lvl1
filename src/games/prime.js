@@ -1,38 +1,38 @@
 import {
-  gameIngine,
+  main,
   numberOfRound,
 } from '..';
 import getRandomInt from '../math';
 
-const description = 'Answer "yes" if given number is prime. Otherwise answer "no".\n';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const rigthAnswer = (num) => {
+const isPrimeNumber = (num) => {
   if (num > 3) {
     for (let i = 2; i <= Number(num / 2); i += 1) {
       if (num % i === 0) {
-        return 'no';
+        return false;
       }
     }
   }
-  return 'yes';
+  return true;
 };
 
-const questionForUser = (num) => String(num);
-
-function dataFromGame(rounds) {
+function getDataFromGame(numberOfRounds) {
   const data = [];
-  for (let i = 0; i < rounds; i += 1) {
-    const number = getRandomInt(100);
+  for (let i = 0; i < numberOfRounds; i += 1) {
+    const question = getRandomInt(1, 100);
+    const rigthAnswer = isPrimeNumber(question) ? 'yes' : 'no';
+    const questionForUser = String(question);
 
     data.push([
-      rigthAnswer(number),
-      questionForUser(number),
+      rigthAnswer,
+      questionForUser,
     ]);
   }
   return data;
 }
-const data = dataFromGame(numberOfRound);
+const dataFromGame = getDataFromGame(numberOfRound);
 
 export default () => {
-  gameIngine(data, description);
+  main(dataFromGame, description);
 };

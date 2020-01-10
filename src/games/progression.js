@@ -1,36 +1,37 @@
 import {
-  gameIngine,
+  main,
   numberOfRound,
 } from '..';
 import getRandomInt from '../math';
 
-const description = 'What number is missing in the progression?\n';
+const description = 'What number is missing in the progression?';
+const lengthOfList = 10;
 
 function getRandomList() {
   const randomList = [];
-  let start = getRandomInt(50);
-  const step = getRandomInt(9) + 1;
-  let count = 10;
-  while (count > 0) {
+  let len = lengthOfList;
+  let start = getRandomInt(1, 50);
+  const step = getRandomInt(1, 11);
+  while (len > 0) {
     randomList.push(start);
     start += step;
-    count -= 1;
+    len -= 1;
   }
   return randomList;
 }
 
-const questionForUser = (arr, num) => {
-  arr.splice(num, 1, '..');
-  return arr.join(' ');
+const questionForUser = (givenList, num) => {
+  givenList.splice(num, 1, '..');
+  return givenList.join(' ');
 };
 
-const rigthAnswer = (Arr, num) => String(Arr[num]);
+const rigthAnswer = (givenList, num) => String(givenList[num]);
 
-function dataFromGame(rounds) {
+function getDataFromGame(numberOfRounds) {
   const data = [];
-  for (let i = 0; i < rounds; i += 1) {
+  for (let i = 0; i < numberOfRounds; i += 1) {
     const randList = getRandomList();
-    const missingNumber = getRandomInt(10);
+    const missingNumber = getRandomInt(0, lengthOfList);
 
     data.push([
       rigthAnswer(randList, missingNumber),
@@ -39,8 +40,8 @@ function dataFromGame(rounds) {
   }
   return data;
 }
-const data = dataFromGame(numberOfRound);
+const dataFromGame = getDataFromGame(numberOfRound);
 
 export default () => {
-  gameIngine(data, description);
+  main(dataFromGame, description);
 };
