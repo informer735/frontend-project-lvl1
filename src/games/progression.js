@@ -1,47 +1,48 @@
 import {
   main,
-  numberOfRound,
+  numberOfRounds,
 } from '..';
 import getRandomInt from '../math';
 
 const description = 'What number is missing in the progression?';
-const lengthOfList = 10;
+const lengthOfProgression = 10;
 
-function getRandomList() {
-  const randomList = [];
-  let len = lengthOfList;
-  let start = getRandomInt(1, 50);
-  const step = getRandomInt(1, 11);
+const getProgression = (start, step, lenOfProgression) => {
+  const progression = [];
+  let len = lenOfProgression;
+  let number = start;
   while (len > 0) {
-    randomList.push(start);
-    start += step;
+    progression.push(number);
+    number += step;
     len -= 1;
   }
-  return randomList;
-}
-
-const questionForUser = (givenList, num) => {
-  givenList.splice(num, 1, '..');
-  return givenList.join(' ');
+  return progression;
 };
 
-const rigthAnswer = (givenList, num) => String(givenList[num]);
+const questionForUser = (progression, num) => {
+  progression.splice(num, 1, '..');
+  return progression.join(' ');
+};
 
-function getDataFromGame(numberOfRounds) {
+const rigthAnswer = (progression, num) => String(progression[num]);
+
+const getGameData = (numOfRounds) => {
   const data = [];
-  for (let i = 0; i < numberOfRounds; i += 1) {
-    const randList = getRandomList();
-    const missingNumber = getRandomInt(0, lengthOfList);
+  for (let i = 0; i < numOfRounds; i += 1) {
+    const start = getRandomInt(1, 50);
+    const step = getRandomInt(1, 10);
+    const progression = getProgression(start, step, lengthOfProgression);
+    const missingNumber = getRandomInt(0, lengthOfProgression);
 
     data.push([
-      rigthAnswer(randList, missingNumber),
-      questionForUser(randList, missingNumber),
+      rigthAnswer(progression, missingNumber),
+      questionForUser(progression, missingNumber),
     ]);
   }
   return data;
-}
-const dataFromGame = getDataFromGame(numberOfRound);
+};
+const gameData = getGameData(numberOfRounds);
 
 export default () => {
-  main(dataFromGame, description);
+  main(gameData, description);
 };

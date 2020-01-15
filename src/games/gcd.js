@@ -1,6 +1,6 @@
 import {
   main,
-  numberOfRound,
+  numberOfRounds,
 } from '..';
 import getRandomInt from '../math';
 
@@ -21,9 +21,9 @@ const findGcd = (num1, num2) => {
 const questionForUser = (num1, num2) => `${num1} ${num2}`;
 const rigthAnswer = (num1, num2) => String(findGcd(num1, num2));
 
-function getDataFromGame(numberOfRounds) {
+const getGameData = (numOfRounds) => {
   const data = [];
-  for (let i = 0; i < numberOfRounds; i += 1) {
+  for (let i = 0; i < numOfRounds; i += 1) {
     const number1 = getRandomInt(1, 100);
     const number2 = getRandomInt(1, 100);
 
@@ -33,9 +33,9 @@ function getDataFromGame(numberOfRounds) {
     ]);
   }
   return data;
-}
-const dataFromGame = getDataFromGame(numberOfRound);
+};
+const gameData = getGameData(numberOfRounds);
 
 export default () => {
-  main(dataFromGame, description);
+  main(gameData, description);
 };

@@ -1,34 +1,33 @@
 import readlinesync from 'readline-sync';
 
-export const numberOfRound = 3;
-let userName = '';
+export const numberOfRounds = 3;
 
-const printStartMessage = (description) => {
-  const message = 'Welcome to the Brain Games!';
-  console.log(`${message}\n${description}\n`);
+const printDescription = (description) => {
+  console.log(`${description}\n`);
 };
 
-const greeting = () => {
-  userName = readlinesync.question(' May I have your name? ');
-  console.log(`Hello, ${userName}!\n`);
+const greeting = (name) => {
+  console.log(`Hello, ${name}!\n`);
 };
 
-const gamePlay = (dataFromGame) => {
+const getGameResult = (gameData, userName) => {
   // eslint-disable-next-line no-restricted-syntax
-  for (const [rigthAnswer, question] of dataFromGame) {
+  for (const [rigthAnswer, question] of gameData) {
     console.log(`Question: ${question}`);
     const answer = readlinesync.question('Your answer: ');
     if (rigthAnswer === answer) {
       console.log('Correct!');
     } else {
-      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rigthAnswer}'. Let's try again, ${userName}!`);
+      return `'${answer}' is wrong answer ;(. Correct answer was '${rigthAnswer}'. Let's try again, ${userName}!`;
     }
   }
-  return console.log(`Congratulations, ${userName}!`);
+  return `Congratulations, ${userName}!`;
 };
 
 export const main = (data, description) => {
-  printStartMessage(description);
-  greeting();
-  gamePlay(data);
+  console.log('Welcome to the Brain Games!');
+  printDescription(description);
+  const userName = readlinesync.question(' May I have your name? ');
+  greeting(userName);
+  console.log(getGameResult(data, userName));
 };

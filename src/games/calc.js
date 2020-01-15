@@ -1,16 +1,15 @@
 import {
   main,
-  numberOfRound,
+  numberOfRounds,
 } from '..';
 import getRandomInt from '../math';
 
 const description = 'What is the result of the expression?';
 
 const randomOperator = () => {
-  const randNum = Math.random();
-  if (randNum < 0.33) return '+';
-  if (randNum < 0.66) return '-';
-  return '*';
+  const operators = ['+', '-', '*'];
+  const index = getRandomInt(0, operators.length);
+  return operators[index];
 };
 
 const calculation = (operand1, operand2, operation) => {
@@ -31,9 +30,9 @@ const calculation = (operand1, operand2, operation) => {
   return result;
 };
 
-function getDataFromGame(numberOfRounds) {
+const getGameData = (numOfRounds) => {
   const data = [];
-  for (let i = 0; i < numberOfRounds; i += 1) {
+  for (let i = 0; i < numOfRounds; i += 1) {
     const operand1 = getRandomInt(1, 100);
     const operand2 = getRandomInt(1, 100);
     const operation = randomOperator();
@@ -47,9 +46,9 @@ function getDataFromGame(numberOfRounds) {
     ]);
   }
   return data;
-}
-const dataFromGame = getDataFromGame(numberOfRound);
+};
+const gameData = getGameData(numberOfRounds);
 
 export default () => {
-  main(dataFromGame, description);
+  main(gameData, description);
 };
