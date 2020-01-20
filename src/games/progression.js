@@ -1,7 +1,4 @@
-import {
-  main,
-  numberOfRounds,
-} from '..';
+import main from '..';
 import getRandomInt from '../math';
 
 const description = 'What number is missing in the progression?';
@@ -27,22 +24,16 @@ const getQuestionForUser = (progression, missIndex) => {
 const getRigthAnswer = (progression, index) => String(progression[index]);
 
 const getGameData = () => {
-  const data = [];
-  for (let i = 0; i < numberOfRounds; i += 1) {
-    const start = getRandomInt(1, 50);
-    const step = getRandomInt(1, 10);
-    const progression = getProgression(start, step, lengthOfProgression);
-    const missIndex = getRandomInt(0, lengthOfProgression - 1);
+  const start = getRandomInt(1, 50);
+  const step = getRandomInt(1, 10);
+  const progression = getProgression(start, step, lengthOfProgression);
+  const missIndex = getRandomInt(0, lengthOfProgression - 1);
+  const rigthAnswer = getRigthAnswer(progression, missIndex);
+  const questionForUser = getQuestionForUser(progression, missIndex);
 
-    data.push([
-      getRigthAnswer(progression, missIndex),
-      getQuestionForUser(progression, missIndex),
-    ]);
-  }
-  return data;
+  return [rigthAnswer, questionForUser];
 };
-const gameData = getGameData(numberOfRounds);
 
 export default () => {
-  main(gameData, description);
+  main(getGameData, description);
 };

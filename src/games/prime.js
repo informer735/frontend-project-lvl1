@@ -1,7 +1,4 @@
-import {
-  main,
-  numberOfRounds,
-} from '..';
+import main from '..';
 import getRandomInt from '../math';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -19,21 +16,13 @@ const isPrimeNumber = (num) => {
 };
 
 const getDataGame = () => {
-  const data = [];
-  for (let i = 0; i < numberOfRounds; i += 1) {
-    const question = getRandomInt();
-    const rigthAnswer = isPrimeNumber(question) ? 'yes' : 'no';
-    const questionForUser = String(question);
+  const question = getRandomInt();
+  const rigthAnswer = isPrimeNumber(question) ? 'yes' : 'no';
+  const questionForUser = String(question);
 
-    data.push([
-      rigthAnswer,
-      questionForUser,
-    ]);
-  }
-  return data;
+  return [rigthAnswer, questionForUser];
 };
-const gameData = getDataGame(numberOfRounds);
 
 export default () => {
-  main(gameData, description);
+  main(getDataGame, description);
 };

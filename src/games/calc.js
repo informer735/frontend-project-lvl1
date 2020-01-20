@@ -1,7 +1,4 @@
-import {
-  main,
-  numberOfRounds,
-} from '..';
+import main from '..';
 import getRandomInt from '../math';
 
 const description = 'What is the result of the expression?';
@@ -31,24 +28,16 @@ const calculation = (operand1, operand2, operation) => {
 };
 
 const getGameData = () => {
-  const data = [];
-  for (let i = 0; i < numberOfRounds; i += 1) {
-    const operand1 = getRandomInt();
-    const operand2 = getRandomInt();
-    const operation = randomOperator();
+  const operand1 = getRandomInt();
+  const operand2 = getRandomInt();
+  const operation = randomOperator();
 
-    const rigthAnswer = String(calculation(operand1, operand2, operation));
-    const questionForUser = `${operand1} ${operation} ${operand2}`;
+  const rigthAnswer = String(calculation(operand1, operand2, operation));
+  const questionForUser = `${operand1} ${operation} ${operand2}`;
 
-    data.push([
-      rigthAnswer,
-      questionForUser,
-    ]);
-  }
-  return data;
+  return [rigthAnswer, questionForUser];
 };
-const gameData = getGameData(numberOfRounds);
 
 export default () => {
-  main(gameData, description);
+  main(getGameData, description);
 };

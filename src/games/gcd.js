@@ -1,7 +1,4 @@
-import {
-  main,
-  numberOfRounds,
-} from '..';
+import main from '..';
 import getRandomInt from '../math';
 
 const description = 'Find the greatest common divisor of given numbers.';
@@ -22,20 +19,14 @@ const getQuestionForUser = (num1, num2) => `${num1} ${num2}`;
 const getRigthAnswer = (num1, num2) => String(findGcd(num1, num2));
 
 const getGameData = () => {
-  const data = [];
-  for (let i = 0; i < numberOfRounds; i += 1) {
-    const number1 = getRandomInt();
-    const number2 = getRandomInt();
+  const number1 = getRandomInt();
+  const number2 = getRandomInt();
+  const rigthAnswer = getRigthAnswer(number1, number2);
+  const questionForUser = getQuestionForUser(number1, number2);
 
-    data.push([
-      getRigthAnswer(number1, number2),
-      getQuestionForUser(number1, number2),
-    ]);
-  }
-  return data;
+  return [rigthAnswer, questionForUser];
 };
-const gameData = getGameData(numberOfRounds);
 
 export default () => {
-  main(gameData, description);
+  main(getGameData, description);
 };
