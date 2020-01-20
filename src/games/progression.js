@@ -10,33 +10,33 @@ const lengthOfProgression = 10;
 const getProgression = (start, step, lenOfProgression) => {
   const progression = [];
   let len = lenOfProgression;
-  let number = start;
+  let currentElem = start;
   while (len > 0) {
-    progression.push(number);
-    number += step;
+    progression.push(currentElem);
+    currentElem += step;
     len -= 1;
   }
   return progression;
 };
 
-const questionForUser = (progression, num) => {
-  progression.splice(num, 1, '..');
+const getQuestionForUser = (progression, missIndex) => {
+  progression.splice(missIndex, 1, '..');
   return progression.join(' ');
 };
 
-const rigthAnswer = (progression, num) => String(progression[num]);
+const getRigthAnswer = (progression, index) => String(progression[index]);
 
-const getGameData = (numOfRounds) => {
+const getGameData = () => {
   const data = [];
-  for (let i = 0; i < numOfRounds; i += 1) {
+  for (let i = 0; i < numberOfRounds; i += 1) {
     const start = getRandomInt(1, 50);
     const step = getRandomInt(1, 10);
     const progression = getProgression(start, step, lengthOfProgression);
-    const missingNumber = getRandomInt(0, lengthOfProgression);
+    const missIndex = getRandomInt(0, lengthOfProgression);
 
     data.push([
-      rigthAnswer(progression, missingNumber),
-      questionForUser(progression, missingNumber),
+      getRigthAnswer(progression, missIndex),
+      getQuestionForUser(progression, missIndex),
     ]);
   }
   return data;

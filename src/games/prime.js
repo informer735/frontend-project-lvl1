@@ -18,9 +18,9 @@ const isPrimeNumber = (num) => {
   return true;
 };
 
-const getDataGame = (numOfRounds) => {
+const getDataGame = () => {
   const data = [];
-  for (let i = 0; i < numOfRounds; i += 1) {
+  for (let i = 0; i < numberOfRounds; i += 1) {
     const question = getRandomInt(1, 100);
     const rigthAnswer = isPrimeNumber(question) ? 'yes' : 'no';
     const questionForUser = String(question);

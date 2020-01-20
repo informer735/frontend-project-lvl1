@@ -8,7 +8,7 @@ const description = 'What is the result of the expression?';
 
 const randomOperator = () => {
   const operators = ['+', '-', '*'];
-  const index = getRandomInt(0, operators.length);
+  const index = getRandomInt(0, operators.length - 1);
   return operators[index];
 };
 
@@ -30,9 +30,9 @@ const calculation = (operand1, operand2, operation) => {
   return result;
 };
 
-const getGameData = (numOfRounds) => {
+const getGameData = () => {
   const data = [];
-  for (let i = 0; i < numOfRounds; i += 1) {
+  for (let i = 0; i < numberOfRounds; i += 1) {
     const operand1 = getRandomInt(1, 100);
     const operand2 = getRandomInt(1, 100);
     const operation = randomOperator();

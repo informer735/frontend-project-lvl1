@@ -18,18 +18,18 @@ const findGcd = (num1, num2) => {
   return findGcd(b, a % b);
 };
 
-const questionForUser = (num1, num2) => `${num1} ${num2}`;
-const rigthAnswer = (num1, num2) => String(findGcd(num1, num2));
+const getQuestionForUser = (num1, num2) => `${num1} ${num2}`;
+const getRigthAnswer = (num1, num2) => String(findGcd(num1, num2));
 
-const getGameData = (numOfRounds) => {
+const getGameData = () => {
   const data = [];
-  for (let i = 0; i < numOfRounds; i += 1) {
+  for (let i = 0; i < numberOfRounds; i += 1) {
     const number1 = getRandomInt(1, 100);
     const number2 = getRandomInt(1, 100);
 
     data.push([
-      rigthAnswer(number1, number2),
-      questionForUser(number1, number2),
+      getRigthAnswer(number1, number2),
+      getQuestionForUser(number1, number2),
     ]);
   }
   return data;
