@@ -32,7 +32,7 @@ const getGameData = () => {
     const start = getRandomInt(1, 50);
     const step = getRandomInt(1, 10);
     const progression = getProgression(start, step, lengthOfProgression);
-    const missIndex = getRandomInt(0, lengthOfProgression);
+    const missIndex = getRandomInt(0, lengthOfProgression - 1);
 
     data.push([
       getRigthAnswer(progression, missIndex),

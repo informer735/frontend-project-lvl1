@@ -33,8 +33,8 @@ const calculation = (operand1, operand2, operation) => {
 const getGameData = () => {
   const data = [];
   for (let i = 0; i < numberOfRounds; i += 1) {
-    const operand1 = getRandomInt(1, 100);
-    const operand2 = getRandomInt(1, 100);
+    const operand1 = getRandomInt();
+    const operand2 = getRandomInt();
     const operation = randomOperator();
 
     const rigthAnswer = String(calculation(operand1, operand2, operation));

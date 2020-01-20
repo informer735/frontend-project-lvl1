@@ -21,7 +21,7 @@ const isPrimeNumber = (num) => {
 const getDataGame = () => {
   const data = [];
   for (let i = 0; i < numberOfRounds; i += 1) {
-    const question = getRandomInt(1, 100);
+    const question = getRandomInt();
     const rigthAnswer = isPrimeNumber(question) ? 'yes' : 'no';
     const questionForUser = String(question);
 

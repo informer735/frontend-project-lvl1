@@ -24,8 +24,8 @@ const getRigthAnswer = (num1, num2) => String(findGcd(num1, num2));
 const getGameData = () => {
   const data = [];
   for (let i = 0; i < numberOfRounds; i += 1) {
-    const number1 = getRandomInt(1, 100);
-    const number2 = getRandomInt(1, 100);
+    const number1 = getRandomInt();
+    const number2 = getRandomInt();
 
     data.push([
       getRigthAnswer(number1, number2),
