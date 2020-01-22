@@ -8,6 +8,7 @@
  $ make publish
  $ make npm link
  ```
+[![asciicast](https://asciinema.org/a/ZUaCJoz0exW7kq7qZ76afgt3z.svg)](https://asciinema.org/a/ZUaCJoz0exW7kq7qZ76afgt3z)
 
 ## Brain-even (угадай чётные числа)
 
@@ -15,8 +16,7 @@
  ```sh
  $ brain-even
  ```
-
-[![asciicast](https://asciinema.org/a/0cESWoNKkLXcZUcRJlZ9rqiQb.svg)](https://asciinema.org/a/0cESWoNKkLXcZUcRJlZ9rqiQb)
+[![asciicast](https://asciinema.org/a/Hm4aEufcTGRp34qhOjer0Bc24.svg)](https://asciinema.org/a/Hm4aEufcTGRp34qhOjer0Bc24)
 
 ## Brain-calc (калькулятор)
 
@@ -24,8 +24,7 @@
  ```sh
  $ brain-calc
  ```
-
-[![asciicast](https://asciinema.org/a/kT2z7ruJE3zcXU1pU4mLTpRhD.svg)](https://asciinema.org/a/kT2z7ruJE3zcXU1pU4mLTpRhD)
+[![asciicast](https://asciinema.org/a/3gbwkT9XkiiTwBE2swscOkN2v.svg)](https://asciinema.org/a/3gbwkT9XkiiTwBE2swscOkN2v)
 
 ## Brain-gcd (поиск наибольшего делителя)
 
@@ -33,7 +32,7 @@
  ```sh
  $ brain-gcd
  ```
-[![asciicast](https://asciinema.org/a/WOst4CV8zHqwl7LAgnJIvNt4T.svg)](https://asciinema.org/a/WOst4CV8zHqwl7LAgnJIvNt4T)
+[![asciicast](https://asciinema.org/a/t5YVudKP5WLoahJn8aZ9jIdjF.svg)](https://asciinema.org/a/t5YVudKP5WLoahJn8aZ9jIdjF)
 
 ## Brain-progression (арифметическая прогрессия)
 
@@ -41,8 +40,7 @@
  ```sh
  $ brain-progression
  ```
-
-[![asciicast](https://asciinema.org/a/X7kbyLgNrSC7ldDD9HNZs0XM4.svg)](https://asciinema.org/a/X7kbyLgNrSC7ldDD9HNZs0XM4)
+[![asciicast](https://asciinema.org/a/NfrwnbYcj1rRxC4wQ6XgtGE2o.svg)](https://asciinema.org/a/NfrwnbYcj1rRxC4wQ6XgtGE2o)
 
 ## Brain-prime (найди простое число)
 
@@ -50,4 +48,4 @@
  ```sh
  $ brain-prime
  ```
-[![asciicast](https://asciinema.org/a/BRr9gvxNY6j8PVsezCFNBSIS4.svg)](https://asciinema.org/a/BRr9gvxNY6j8PVsezCFNBSIS4)
+[![asciicast](https://asciinema.org/a/uLgRClKWlCUtmcasAlCsVS1Pf.svg)](https://asciinema.org/a/uLgRClKWlCUtmcasAlCsVS1Pf)
