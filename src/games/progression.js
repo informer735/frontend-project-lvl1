@@ -6,12 +6,11 @@ const lengthOfProgression = 10;
 
 const getProgression = (start, step, lenOfProgression) => {
   const progression = [];
-  let len = lenOfProgression;
   let currentElem = start;
-  while (len > 0) {
+
+  for (let i = 0; i < lenOfProgression; i += 1) {
     progression.push(currentElem);
     currentElem += step;
-    len -= 1;
   }
   return progression;
 };
@@ -27,11 +26,12 @@ const getGameData = () => {
   const start = getRandomInt(1, 50);
   const step = getRandomInt(1, 10);
   const progression = getProgression(start, step, lengthOfProgression);
-  const missIndex = getRandomInt(0, lengthOfProgression - 1);
-  const rigthAnswer = getRigthAnswer(progression, missIndex);
-  const questionForUser = getQuestionForUser(progression, missIndex);
+  const missedIndex = getRandomInt(0, lengthOfProgression - 1);
 
-  return [rigthAnswer, questionForUser];
+  return [
+    getRigthAnswer(progression, missedIndex),
+    getQuestionForUser(progression, missedIndex),
+  ];
 };
 
 export default () => {

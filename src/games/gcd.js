@@ -21,10 +21,11 @@ const getRigthAnswer = (num1, num2) => String(findGcd(num1, num2));
 const getGameData = () => {
   const number1 = getRandomInt();
   const number2 = getRandomInt();
-  const rigthAnswer = getRigthAnswer(number1, number2);
-  const questionForUser = getQuestionForUser(number1, number2);
 
-  return [rigthAnswer, questionForUser];
+  return [
+    getRigthAnswer(number1, number2),
+    getQuestionForUser(number1, number2),
+  ];
 };
 
 export default () => {

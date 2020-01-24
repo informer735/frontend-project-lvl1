@@ -8,9 +8,8 @@ const isEven = (number) => number % 2 === 0;
 const getGameData = () => {
   const question = getRandomInt();
   const rigthAnswer = (isEven(question)) ? 'yes' : 'no';
-  const questionForUser = String(question);
 
-  return [rigthAnswer, questionForUser];
+  return [rigthAnswer, String(question)];
 };
 
 export default () => {

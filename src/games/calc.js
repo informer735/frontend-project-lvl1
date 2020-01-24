@@ -2,9 +2,9 @@ import main from '..';
 import getRandomInt from '../math';
 
 const description = 'What is the result of the expression?';
+const operators = ['+', '-', '*'];
 
 const randomOperator = () => {
-  const operators = ['+', '-', '*'];
   const index = getRandomInt(0, operators.length - 1);
   return operators[index];
 };
