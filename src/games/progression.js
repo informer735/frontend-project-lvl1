@@ -6,11 +6,9 @@ const lengthOfProgression = 10;
 
 const getProgression = (start, step, lenOfProgression) => {
   const progression = [];
-  let currentElem = start;
 
   for (let i = 0; i < lenOfProgression; i += 1) {
-    progression.push(currentElem);
-    currentElem += step;
+    progression.push(start + step * i);
   }
   return progression;
 };

@@ -3,7 +3,7 @@ import getRandomInt from '../math';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const isPrimeNumber = (num) => {
+const isPrime = (num) => {
   if (num < 2) {
     return false;
   }
@@ -17,7 +17,7 @@ const isPrimeNumber = (num) => {
 
 const getDataGame = () => {
   const question = getRandomInt();
-  const rigthAnswer = isPrimeNumber(question) ? 'yes' : 'no';
+  const rigthAnswer = isPrime(question) ? 'yes' : 'no';
 
   return [rigthAnswer, String(question)];
 };

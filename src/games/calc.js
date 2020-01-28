@@ -10,7 +10,7 @@ const randomOperator = () => {
 };
 
 const calculation = (operand1, operand2, operation) => {
-  let result = '';
+  let result;
   switch (operation) {
     case '+':
       result = operand1 + operand2;

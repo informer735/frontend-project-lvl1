@@ -11,9 +11,9 @@ const greeting = (name) => {
   console.log(`Hello, ${name}!\n`);
 };
 
-const playGameRound = (gameData, userName) => {
+const playGameRound = (getGameData, userName) => {
   for (let i = 0; i < numberOfRounds; i += 1) {
-    const [rigthAnswer, question] = gameData();
+    const [rigthAnswer, question] = getGameData();
     console.log(`Question: ${question}`);
     const answer = readlinesync.question('Your answer: ');
 
